@@ -6,11 +6,11 @@ import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 const ResultDisplay = ({ result, originalImage, onReset }) => {
 const getResultMessage = (prediction) => {
-  const predictionValue = String(prediction); // Convertir predicción a cadena para asegurar compatibilidad
+  const predictionValue = String(prediction);
   switch (predictionValue) {
-    case "0":
-      return { text: "COVID-19", color: "error", icon: <ErrorIcon color="error" /> };
     case "1":
+      return { text: "COVID-19", color: "error", icon: <ErrorIcon color="error" /> };
+    case "0":
       return { text: "NORMAL", color: "success", icon: <CheckCircleIcon color="success" /> };
     case "2":
       return { text: "PNEUMONÍA VIRAL", color: "warning", icon: <WarningAmberIcon color="warning" /> };
